@@ -1,0 +1,8 @@
+#!/bin/bash
+
+#Update GMOD Server
+su gmod -c 'steamcmd +runscript /home/gmod/gmod-server/gmod_server_update'
+
+#Start Server
+cd /home/gmod/gmod-server
+su gmod -c './srcds_run +maxplayers ${Server_Max_Player} +gamemode ${Server_Gmod_Mod} +host_workshop_collection ${Server_workshop_collection}  +map  ${Server_Map} +hostname "${Server_Name}"'

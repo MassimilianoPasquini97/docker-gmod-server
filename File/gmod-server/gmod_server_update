@@ -1,0 +1,5 @@
+// Start GMOD Server
+login anonymous
+force_install_dir /home/gmod/gmod-server
+app_update 4020 validate
+quit
