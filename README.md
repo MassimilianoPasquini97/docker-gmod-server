@@ -49,3 +49,10 @@ Example below
 ```bash
 docker run -d -p 27015:27015/udp -p 27005:27005/udp --name server-gmod-prophunt -v gmod_server:/home/gmod/gmod-server massimilianopasquini/gmod-server
 ```
+
+# Docker Compose
+To facilitate the start of the containers it is possible to use the docker compose files present in the Example/docker-compose directory. Choose the docker-compose.yml based on the mod you want to use and run
+
+```bash
+sudo docker-compose up -d gmod-server
+```

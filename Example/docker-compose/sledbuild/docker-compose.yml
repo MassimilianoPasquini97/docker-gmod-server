@@ -1,0 +1,27 @@
+version: "3.5"
+services:
+  gmod-server:
+    image: massimilianopasquini/gmod-server:latest
+    container_name: gmod-sledbuild-server
+    restart: on-failure
+    volumes:
+      - type: volume
+        source: gamefolder-gmod-sledbuild-server
+        target: /home/gmod/gmod-server
+    environment:
+      Server_Name: '[sledbuild]Server'
+      Server_Max_Player: '20'
+      Server_Gmod_Mod: 'sledbuild'
+      Server_workshop_collection: '322430043'
+      Server_Map: 'slb_snowsled_v3'
+    ports:
+      - target: 27015
+        published: 27015
+        protocol: udp
+        mode: host
+      - target: 27005
+        published: 27005
+        protocol: udp
+        mode: host
+volumes:
+  gamefolder-gmod-sledbuild-server:
